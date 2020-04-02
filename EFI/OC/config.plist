@@ -1293,8 +1293,8 @@
 			<integer>2147483648</integer>
 			<key>RequireSignature</key>
 			<false/>
-			<key>RequireVault</key>
-			<false/>
+			<key>Vault</key>
+			<string>Optional</string>
 			<key>ScanPolicy</key>
 			<integer>0</integer>
 		</dict>
@@ -1443,8 +1443,6 @@
 			<false/>
 			<key>AppleUserInterfaceTheme</key>
 			<false/>
-			<key>ConsoleControl</key>
-			<true/>
 			<key>DataHub</key>
 			<false/>
 			<key>DeviceProperties</key>
@@ -1458,8 +1456,6 @@
 		</dict>
 		<key>Quirks</key>
 		<dict>
-			<key>AvoidHighAlloc</key>
-			<false/>
 			<key>ClearScreenOnModeSwitch</key>
 			<false/>
 			<key>ExitBootServicesDelay</key>

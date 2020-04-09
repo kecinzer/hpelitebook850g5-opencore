@@ -30,6 +30,14 @@
 				<key>Path</key>
 				<string>SSDT-IGPU.aml</string>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>VoodooI2C polling mode</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-I2C-HP.aml</string>
+			</dict>
 		</array>
 		<key>Block</key>
 		<array/>
@@ -52,6 +60,32 @@
 				<data></data>
 				<key>Replace</key>
 				<data>oAqRCv8L//8=</data>
+				<key>ReplaceMask</key>
+				<data></data>
+				<key>Skip</key>
+				<integer>0</integer>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data></data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Change _CRS to XCRS Trackpad I2C polling mode patch</string>
+				<key>Count</key>
+				<integer>0</integer>
+				<key>Enabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X0NSUwCgDpVPU1lTC9wHpFNCRkk=</data>
+				<key>Limit</key>
+				<integer>0</integer>
+				<key>Mask</key>
+				<data></data>
+				<key>OemTableId</key>
+				<data></data>
+				<key>Replace</key>
+				<data>WENSUwCgDpVPU1lTC9wHpFNCRkk=</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>

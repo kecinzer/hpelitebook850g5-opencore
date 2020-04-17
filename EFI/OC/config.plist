@@ -36,7 +36,7 @@
 				<key>Path</key>
 				<string>SSDT-I2C-HP.aml</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -84,7 +84,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>X0NSUwCgDpVPU1lTC9wHpFNCRkk=</data>
 				<key>Limit</key>

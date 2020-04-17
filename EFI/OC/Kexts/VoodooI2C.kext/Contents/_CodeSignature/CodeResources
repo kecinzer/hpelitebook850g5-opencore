@@ -3,69 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>files</key>
-	<dict>
-		<key>Resources/VoodooInputMultitouch/MultitouchHelpers.h</key>
-		<data>
-		2Dn/wSPXmisHoAia4HckRfPF9VY=
-		</data>
-		<key>Resources/VoodooInputMultitouch/VoodooInputEvent.h</key>
-		<data>
-		4GTEuNGgjRofbAtGSyWz6Nbsnos=
-		</data>
-		<key>Resources/VoodooInputMultitouch/VoodooInputMessages.h</key>
-		<data>
-		ITveLScF2AAkztNSTyiWkOCYc8U=
-		</data>
-		<key>Resources/VoodooInputMultitouch/VoodooInputTransducer.h</key>
-		<data>
-		tKf2y+abfZojxi5j6ykUe/xPcsw=
-		</data>
-	</dict>
+	<dict/>
 	<key>files2</key>
 	<dict>
-		<key>Resources/VoodooInputMultitouch/MultitouchHelpers.h</key>
+		<key>PlugIns/VoodooGPIO.kext</key>
 		<dict>
-			<key>hash</key>
+			<key>cdhash</key>
 			<data>
-			2Dn/wSPXmisHoAia4HckRfPF9VY=
+			j+e22v2wLQRSxU0bALXlr95OYJQ=
 			</data>
-			<key>hash2</key>
-			<data>
-			Sfb8D4oD0U3eU/uN3tJWzilbqnn/x967cYacLl0mbZc=
-			</data>
+			<key>requirement</key>
+			<string>cdhash H"a6f43505f54196512074747406e40770946926cd" or cdhash H"8fe7b6dafdb02d0452c54d1b00b5e5afde4e6094"</string>
 		</dict>
-		<key>Resources/VoodooInputMultitouch/VoodooInputEvent.h</key>
+		<key>PlugIns/VoodooI2CServices.kext</key>
 		<dict>
-			<key>hash</key>
+			<key>cdhash</key>
 			<data>
-			4GTEuNGgjRofbAtGSyWz6Nbsnos=
+			na3H9uaZgMFOdAXXvt7W2kvwG5Q=
 			</data>
-			<key>hash2</key>
-			<data>
-			pU3r7vNH4yll7M033lo4m86PdykPsGcQ05X2FBUJqxA=
-			</data>
+			<key>requirement</key>
+			<string>cdhash H"780b105724add5f545f4f91c1c9e305b67a4bf8e" or cdhash H"9dadc7f6e69980c14e7405d7beded6da4bf01b94"</string>
 		</dict>
-		<key>Resources/VoodooInputMultitouch/VoodooInputMessages.h</key>
+		<key>PlugIns/VoodooInput.kext</key>
 		<dict>
-			<key>hash</key>
+			<key>cdhash</key>
 			<data>
-			ITveLScF2AAkztNSTyiWkOCYc8U=
+			kN3GGx3e222thXaGy+12aWi685M=
 			</data>
-			<key>hash2</key>
-			<data>
-			6cZnFcLcCIBCR9exzPhAM5inJryl67pW37DSZJP2nI8=
-			</data>
-		</dict>
-		<key>Resources/VoodooInputMultitouch/VoodooInputTransducer.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tKf2y+abfZojxi5j6ykUe/xPcsw=
-			</data>
-			<key>hash2</key>
-			<data>
-			IvkIsPz4A0X9BU4ot3+PyGGBxdoOe16xvFDZY6rIctA=
-			</data>
+			<key>requirement</key>
+			<string>cdhash H"55be3147166839f7e5c0b9350c94955abf547726" or cdhash H"90ddc61b1ddedb6dad857686cbed766968baf393"</string>
 		</dict>
 	</dict>
 	<key>rules</key>

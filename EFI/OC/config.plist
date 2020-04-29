@@ -8,7 +8,7 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-EB850G5.aml</string>
+				<string>Main SSDT for EliteBook 850 G5</string>
 				<key>Path</key>
 				<string>SSDT-EB850G5.aml</string>
 				<key>Enabled</key>
@@ -16,7 +16,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-PLUG.aml</string>
+				<string>Native Power Management</string>
 				<key>Path</key>
 				<string>SSDT-PLUG.aml</string>
 				<key>Enabled</key>
@@ -24,15 +24,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-FANREAD.aml</string>
-				<key>Path</key>
-				<string>SSDT-FANREAD.aml</string>
-				<key>Enabled</key>
-				<true/>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>SSDT-I2C-HP.aml</string>
+				<string>I2C touchpad polling patch</string>
 				<key>Path</key>
 				<string>SSDT-I2C-HP.aml</string>
 				<key>Enabled</key>
@@ -40,7 +32,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-IGPU.aml</string>
+				<string>GPU</string>
 				<key>Path</key>
 				<string>SSDT-IGPU.aml</string>
 				<key>Enabled</key>
@@ -251,32 +243,6 @@
 				<data></data>
 				<key>Replace</key>
 				<data>SUdQVQ==</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data></data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Change Device(HECI) _ADR=0x00160000 to _ADR=0</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<false/>
-				<key>Find</key>
-				<data>SEVDSQhfQURSDAAAFgA=</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>OemTableId</key>
-				<data></data>
-				<key>Replace</key>
-				<data>SEVDSQhfQURSDAAAAAA=</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -1048,12 +1014,10 @@
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
-				<key>framebuffer-con1-alldata</key>
-				<data>AQUKAAAIAACHAQAAAgQKAAAIAACHAQAA</data>
-				<key>framebuffer-con1-enable</key>
-				<integer>1</integer>
-				<key>framebuffer-patch-enable</key>
-				<integer>1</integer>
+				<key>device-id</key>
+				<data>wIcAAA==</data>
+				<key>AAPL,ig-platform-id</key>
+				<data>AADAhw==</data>
 			</dict>
 		</dict>
 	</dict>
@@ -1137,6 +1101,22 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>ExecutablePath</key>
+				<string>Contents/MacOS/NVMeFix</string>
+				<key>BundlePath</key>
+				<string>NVMeFix.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
 				<string>Contents/MacOS/ACPIBatteryManager</string>
 				<key>BundlePath</key>
 				<string>ACPIBatteryManager.kext</string>
@@ -1172,22 +1152,6 @@
 				<string>Contents/MacOS/SMCProcessor</string>
 				<key>BundlePath</key>
 				<string>SMCProcessor.kext</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string></string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MinKernel</key>
-				<string></string>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCSuperIO</string>
-				<key>BundlePath</key>
-				<string>SMCSuperIO.kext</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -1300,6 +1264,22 @@
 				<string>Contents/MacOS/VoodooPS2Keyboard</string>
 				<key>BundlePath</key>
 				<string>VoodooPS2Controller.kext/Contents/PlugIns/VoodooPS2Keyboard.kext</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+				<key>Enabled</key>
+				<true/>
+				<key>MinKernel</key>
+				<string></string>
+				<key>ExecutablePath</key>
+				<string>Contents/MacOS/NoTouchID</string>
+				<key>BundlePath</key>
+				<string>NoTouchID.kext</string>
 			</dict>
 		</array>
 		<key>Block</key>

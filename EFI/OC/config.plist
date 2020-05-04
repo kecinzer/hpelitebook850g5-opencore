@@ -1296,9 +1296,9 @@
 		<array>
 			<dict>
 				<key>Base</key>
-				<string>__ZN8AppleRTC14updateChecksumEv</string>
+				<string>__ZN8AppleRTC18setupDateTimeAlarmEPK11RTCDateTime</string>
 				<key>Comment</key>
-				<string>Disable RTC checksum update on poweroff</string>
+				<string>Disable RTC wake scheduling</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
@@ -1314,7 +1314,7 @@
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
-				<string></string>
+				<string>19.0.0</string>
 				<key>Replace</key>
 				<data>ww==</data>
 				<key>ReplaceMask</key>
@@ -1322,7 +1322,6 @@
 				<key>Skip</key>
 				<integer>0</integer>
 			</dict>
-		</array>
 		<key>Quirks</key>
 		<dict>
 			<key>AppleCpuPmCfgLock</key>
@@ -1334,6 +1333,8 @@
 			<key>CustomSMBIOSGuid</key>
 			<false/>
 			<key>DisableIoMapper</key>
+			<true/>
+			<key>DisableRtcChecksum</key>
 			<true/>
 			<key>ExternalDiskIcons</key>
 			<false/>
@@ -1363,9 +1364,9 @@
 			<key>PollAppleHotKeys</key>
 			<true/>
 			<key>ShowPicker</key>
-			<true/>
+			<false/>
 			<key>Timeout</key>
-			<integer>2</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Debug</key>
 		<dict>
@@ -1548,12 +1549,10 @@
 		<dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
-				<key>wake-failure</key>
-				<data>AAAAAAA=</data>
 				<key>boot-args</key>
 				<string>debug=0x100</string>
 				<key>csr-active-config</key>
-				<data>ZwAAAA==</data>
+				<data>AAAAAA==</data>
 				<key>nvda_drv</key>
 				<data></data>
 				<key>prev-lang:kbd</key>
@@ -1566,6 +1565,8 @@
 		<false/>
 		<key>LegacySchema</key>
 		<dict/>
+		<key>WriteFlash</key>
+		<true/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -1597,12 +1598,24 @@
 	</dict>
 	<key>UEFI</key>
 	<dict>
+		<key>APFS</key>
+		<dict>
+			<key>EnableJumpstart</key>
+			<true/>
+			<key>HideVerbose</key>
+			<true/>
+			<key>JumpstartHotPlug</key>
+			<false/>
+			<key>MinDate</key>
+			<integer>0</integer>
+			<key>MinVersion</key>
+			<integer>0</integer>
+		</dict>
 		<key>ConnectDrivers</key>
 		<true/>
 		<key>Drivers</key>
 		<array>
 			<string>HfsPlus.efi</string>
-			<string>ApfsDriverLoader.efi</string>
 			<string>OpenRuntime.efi</string>
 		</array>
 		<key>Input</key>
@@ -1624,7 +1637,7 @@
 			<key>TimerResolution</key>
 			<integer>0</integer>
 		</dict>
-		<key>Protocols</key>
+		<key>ProtocolOverrides</key>
 		<dict>
 			<key>AppleBootPolicy</key>
 			<false/>

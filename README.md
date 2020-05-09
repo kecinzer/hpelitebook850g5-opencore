@@ -1,5 +1,11 @@
 # HP EliteBook 850 G5 Hackintosh
-Opencore for HP EliteBook 850 G5
+Latest Opencore for HP EliteBook 850 G5.
+For my specific laptop configuration everything works except SmartCard reader, that I even don't use.
+I'm still working on improvement and clean ups.
+
+Huge thanks to https://github.com/acidanthera team for https://github.com/acidanthera/OpenCorePkg.
+Extra credit goes to @usr-sse2 for help with battery (https://github.com/acidanthera/bugtracker/issues/892).
+Also specialy thanks to @RehabMan because it's based on his work - https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/tree/i2c.
 
 ## BIOS settings
 

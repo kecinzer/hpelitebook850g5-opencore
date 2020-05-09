@@ -3,6 +3,63 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
     External(\_SB.PCI0, DeviceObj)
     External(\_SB.PCI0.LPCB, DeviceObj)
     External(\_SB.PCI0.LPCB.EC, DeviceObj)
+    External(\_SB.BAT0, DeviceObj)
+    External(\_SB.BAT1, DeviceObj)
+
+    Scope (\_SB)
+    {
+        Method (BTIX, 1, Serialized)
+        {
+            Local0 = ^PCI0.LPCB.EC.BTIX (Arg0)
+            If ((Local0 == 0xFF))
+            {
+                Return (Package (0x15)
+                {
+                    One,
+                    Zero, 
+                    0xFFFFFFFF, 
+                    0xFFFFFFFF, 
+                    One, 
+                    0xFFFFFFFF, 
+                    Zero, 
+                    Zero, 
+                    0xFFFFFFFF,
+                    100000,
+                    0xFFFFFFFF,
+                    0xFFFFFFFF,
+                    0xFFFFFFFF,
+                    0xFFFFFFFF,
+                    Zero, 
+                    Zero, 
+                    "", 
+                    "", 
+                    "", 
+                    Zero,
+                    One
+                })
+            }
+            Else
+            {
+                Return (DerefOf (NBIX [Arg0]))
+            }
+        }
+    }
+
+    Scope(\_SB.BAT0)
+    {
+        Method (_BIX, 0, NotSerialized)  // _BIX: Battery Information Extended
+        {
+            Return (BTIX (Zero))
+        }
+    }
+    
+    Scope(\_SB.BAT1)
+    {
+        Method (_BIX, 0, NotSerialized)  // _BIX: Battery Information Extended
+        {
+            Return (BTIX (One))
+        }        
+    }
 
     Scope(\_SB.PCI0.LPCB.EC)
     {
@@ -138,8 +195,9 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
             If (ECRG)
             {
                 Store (Arg0, BSEL)
-                Store (B1B2 (BFC0, BFC1), Local0)
+                Store (B1B2 (BDC0, BDC1), Local0)
                 Store (Local0, Index (DerefOf (Index (NBTI, Arg0)), One))
+                Store (B1B2 (BFC0, BFC1), Local0)
                 Store (Local0, Index (DerefOf (Index (NBTI, Arg0)), 0x02))
                 Store (B1B2 (BDV0, BDV1), Index (DerefOf (Index (NBTI, Arg0)), 0x04))
                 Multiply (B1B2 (BFC0, BFC1), NLB1, Local0)
@@ -150,11 +208,12 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
                 Store (Local4, Index (DerefOf (Index (NBTI, Arg0)), 0x06))
                 Store (B1B2 (BSN0, BSN1), Local0)
                 Store (B1B2 (BDA0, BDA1), Local1)
+                
+                // This shouldn't be here!
                 // battery cycle count
                 Store (B1B2 (BCC0, BCC1), Index (DerefOf (Index (NBTI, Arg0)), 0x0D))
                 // battery temperature
                 // battery temperature
-                //Store (\_TZ.GTTP (0x04, 0x05, Zero, Zero, 0x7F), Local2)
                 Acquire (\_SB.PCI0.LPCB.EC.ECMX, 0xFFFF)
                 Store (5, \_SB.PCI0.LPCB.EC.CRZN)
                 Store (\_SB.PCI0.LPCB.EC.TEMP, Local2)
@@ -166,6 +225,58 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
             Release (ECMX)
             Store (GBSS (Local0, Local1), Local2)
             Store (Local2, Index (DerefOf (Index (NBTI, Arg0)), 0x0A))
+            Acquire (BTMX, 0xFFFF)
+            And (NGBF, Not (Local7), NGBF)
+            Release (BTMX)
+            Return (Zero)
+        }
+        
+        Method (BTIX, 1, Serialized)
+        {
+            ShiftLeft (One, Arg0, Local7)
+            BTDR (One)
+            If (LEqual (BSTA (Local7), 0x0F))
+            {
+                Return (0xFF)
+            }
+
+            Acquire (BTMX, 0xFFFF)
+            Store (NGBF, Local0)
+            Release (BTMX)
+            If (LEqual (And (Local0, Local7), Zero))
+            {
+                Return (Zero)
+            }
+
+            Store (NDBS, Index (NBST, Arg0))
+            Acquire (BTMX, 0xFFFF)
+            Or (NGBT, Local7, NGBT)
+            Release (BTMX)
+            Acquire (ECMX, 0xFFFF)
+            If (ECRG)
+            {
+                Store (Arg0, BSEL)
+                Store (B1B2 (BDC0, BDC1), Local0)
+                Store (Local0, Index (DerefOf (Index (NBIX, Arg0)), 0x02))
+                Store (B1B2 (BFC0, BFC1), Local0)
+                Store (Local0, Index (DerefOf (Index (NBIX, Arg0)), 0x03))
+                Store (B1B2 (BDV0, BDV1), Index (DerefOf (Index (NBIX, Arg0)), 0x05))
+                Multiply (B1B2 (BFC0, BFC1), NLB1, Local0)
+                Divide (Local0, 0x64, /*Local3*/, Local4)
+                Store (Local4, Index (DerefOf (Index (NBIX, Arg0)), 0x06))
+                Multiply (B1B2 (BFC0, BFC1), NLO2, Local0)
+                Divide (Local0, 0x64, /*Local3*/, Local4)
+                Store (Local4, Index (DerefOf (Index (NBIX, Arg0)), 0x07))
+                Store (B1B2 (BSN0, BSN1), Local0)
+                Store (B1B2 (BDA0, BDA1), Local1)
+                // battery cycle count
+                Store (B1B2 (BCC0, BCC1), Index (DerefOf (Index (NBIX, Arg0)), 0x08))
+                // battery temperature shouldn't be reported here!
+            }
+
+            Release (ECMX)
+            Store (GBSS (Local0, Local1), Local2)
+            Store (Local2, Index (DerefOf (Index (NBIX, Arg0)), 0x11))
             Acquire (BTMX, 0xFFFF)
             And (NGBF, Not (Local7), NGBF)
             Release (BTMX)
@@ -723,7 +834,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
         // The NBTI in DSDT is renamed to XBTI
         Name (NBTI, Package(0x02)
         {
-            Package(0x0F)
+            Package(0x0D)
             {
                 0x01,
                 0xFFFFFFFF,
@@ -738,10 +849,8 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
                 "100000",
                 "LIon",
                 "Hewlett-Packard",
-                Zero,
-                Zero,
             },
-            Package(0x0F)
+            Package(0x0D)
             {
                 0x01,
                 0xFFFFFFFF,
@@ -756,10 +865,61 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
                 "100000",
                 "LIon",
                 "Hewlett-Packard",
-                Zero,
-                Zero,
             }
         })
+        
+        Name (NBIX, Package(0x02)
+        {
+            Package(0x15)
+            {
+                0x01,
+                0x01,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                0x01,
+                0xFFFFFFFF,
+                0x00,
+                0x00,
+                0x00,
+                100000,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                0x64,
+                0x64,
+                "Primary",
+                "100000",
+                "LIon",
+                "Hewlett-Packard",
+                One
+            },
+            Package(0x15)
+            {
+                0x01,
+                0x01,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                0x01,
+                0xFFFFFFFF,
+                0x00,
+                0x00,
+                0x00,
+                100000,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                0xFFFFFFFF,
+                0x64,
+                0x64,
+                "Travel",
+                "100000",
+                "LIon",
+                "Hewlett-Packard",
+                One
+            }
+        })
+
     }
 
     Method (B1B2, 2, NotSerialized)

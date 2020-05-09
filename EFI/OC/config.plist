@@ -1085,9 +1085,9 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/ACPIBatteryManager</string>
+				<string>Contents/MacOS/SMCBatteryManager</string>
 				<key>BundlePath</key>
-				<string>ACPIBatteryManager.kext</string>
+				<string>SMCBatteryManager.kext</string>
 			</dict>
 			<dict>
 				<key>Comment</key>

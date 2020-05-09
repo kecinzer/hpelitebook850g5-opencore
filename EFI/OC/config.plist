@@ -8,9 +8,81 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Main SSDT for EliteBook 850 G5</string>
+				<string>SSDT-CORE</string>
 				<key>Path</key>
-				<string>SSDT-EB850G5.aml</string>
+				<string>SSDT-00-CORE.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-SMBUS</string>
+				<key>Path</key>
+				<string>SSDT-01-SMBUS.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-LPC</string>
+				<key>Path</key>
+				<string>SSDT-02-LPC.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-PRW</string>
+				<key>Path</key>
+				<string>SSDT-03-PRW.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-AUDIO</string>
+				<key>Path</key>
+				<string>SSDT-04-AUDIO.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-INPUT</string>
+				<key>Path</key>
+				<string>SSDT-05-INPUT.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-USB</string>
+				<key>Path</key>
+				<string>SSDT-06-USB.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-XHC</string>
+				<key>Path</key>
+				<string>SSDT-07-XHC.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-BATT</string>
+				<key>Path</key>
+				<string>SSDT-08-BATT.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-ALS0</string>
+				<key>Path</key>
+				<string>SSDT-09-ALS0.aml</string>
 				<key>Enabled</key>
 				<true/>
 			</dict>
@@ -24,7 +96,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>I2C touchpad polling patch</string>
+				<string>I2C touchpad polling patch - only for safe mode in installer</string>
 				<key>Path</key>
 				<string>SSDT-I2C-HP.aml</string>
 				<key>Enabled</key>
@@ -748,110 +820,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>change Notify(\_SB.BAT0,...) to Notify(_SB.BATC,...)</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>hlwuX1NCX0JBVDA=</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>OemTableId</key>
-				<data></data>
-				<key>Replace</key>
-				<data>hlwuX1NCX0JBVEM=</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data></data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change Notify(\_SB.BAT1,...) to Notify(_SB.BATC,...)</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>hlwuX1NCX0JBVDE=</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>OemTableId</key>
-				<data></data>
-				<key>Replace</key>
-				<data>hlwuX1NCX0JBVEM=</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data></data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change Notify(BAT0,...) to Notify(BATC,...)</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>hkJBVDA=</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>OemTableId</key>
-				<data></data>
-				<key>Replace</key>
-				<data>hkJBVEM=</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data></data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change Notify(BAT1,...) to Notify(BATC,...)</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>hkJBVDE=</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>OemTableId</key>
-				<data></data>
-				<key>Replace</key>
-				<data>hkJBVEM=</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data></data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>change Method(RDSS,1,S) to XDSS</string>
 				<key>Count</key>
 				<integer>0</integer>
@@ -1322,6 +1290,7 @@
 				<key>Skip</key>
 				<integer>0</integer>
 			</dict>
+		</array>
 		<key>Quirks</key>
 		<dict>
 			<key>AppleCpuPmCfgLock</key>
@@ -1553,8 +1522,6 @@
 				<string>debug=0x100</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
-				<key>nvda_drv</key>
-				<data></data>
 				<key>prev-lang:kbd</key>
 				<data></data>
 			</dict>

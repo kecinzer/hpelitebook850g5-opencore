@@ -7,8 +7,12 @@ Huge thanks to [Acidanthera team](https://github.com/acidanthera) for [OpenCore]
 Extra credit goes to @usr-sse2 for [help with battery](https://github.com/acidanthera/bugtracker/issues/892).
 Also specialy thanks to @RehabMan because it's based on [his work](https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/tree/i2c).
 
-### Currently not working
+### Currently not working + solutions
 
+- Bundled Intel Wifi card (8265NGW)
+  - For out of the box support you need [Airport](https://dortania.github.io/Wireless-Buyers-Guide/Airport.html) BCM94360CS2 with M.2 adapter (cca. 20 USD) that I currently have, but it fits to laptop case very hard.
+  - Better, but more expensive (cca. 50 USD) solution is [Fenvi BCM94360NG M.2 card](https://www.aliexpress.com/item/32464748097.html?spm=a2g0s.9042311.0.0.6a744c4d7jS1RQ) that is based on Airport card and fits into laptop perfectly. The best thing - you also don't need any kexts for Wifi nor bluetooth and works out of the box. I'm currently waiting to my order to refer if everything truly works.
+  - For cheaper (12 - 15 USD) solution you can use DW1820A. There is new [ASPM fix](https://osxlatitude.com/forums/topic/11322-broadcom-bcm4350-cards-under-high-sierramojavecatalina/), that solves freezing issues.
 - Trackpoint with buttons (that point in center of G, H, B keys), but we have great touchpad with all gertures.
 - Hibernation (I think it can be done somehow, but I don't need it and I use FileVault2 full disk encryption).
 - DRM (Apple TV+, Netflix in Safari), but there is workaround use different browser ([Vivaldi](https://vivaldi.com) for me). There is also web version of [Apple TV+](https://tv.apple.com) that works from browser.

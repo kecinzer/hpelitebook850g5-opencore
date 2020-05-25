@@ -10,12 +10,12 @@ Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's ba
 ### Currently not working + solutions
 
 - Bundled Intel Wifi card (8265NGW)
-    ![](pictures/intelwifi.jpg)
+    <img src="pictures/intelwifi.jpg" width="400">
   - For out of the box support you need [Airport](https://dortania.github.io/Wireless-Buyers-Guide/Airport.html) BCM94360CS2 with M.2 adapter (cca. 20 USD) that I currently have, but it fits to laptop case very hard.
-    ![](pictures/airport.jpg)
+    <img src="pictures/airport.jpg" width="400">
   - Better, but more expensive (cca. 50 USD) solution is [Fenvi BCM94360NG M.2 card](https://www.aliexpress.com/item/32464748097.html?spm=a2g0s.9042311.0.0.6a744c4d7jS1RQ) that is based on Airport card and fits into laptop perfectly. The best thing - you also don't need any kexts for Wifi nor bluetooth and works out of the box. I'm currently waiting to my order to refer if everything truly works.
   - For cheaper (12 - 15 USD) solution you can use DW1820A. There is new [ASPM fix](https://osxlatitude.com/forums/topic/11322-broadcom-bcm4350-cards-under-high-sierramojavecatalina/), that solves freezing issues.
-    ![](pictures/dw1820a.jpg)
+    <img src="pictures/dw1820a.jpg" width="400">
 - Trackpoint with buttons (that point in center of G, H, B keys), but we have great touchpad with all gertures.
 - Hibernation (I think it can be done somehow, but I don't need it and I use FileVault2 full disk encryption).
 - DRM (Apple TV+, Netflix in Safari), but there is workaround use different browser ([Vivaldi](https://vivaldi.com) for me). There is also web version of [Apple TV+](https://tv.apple.com) that works from browser.

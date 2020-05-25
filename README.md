@@ -4,8 +4,8 @@ For my specific laptop configuration almost everything works except SmartCard re
 I'm still working on improvement and clean ups.
 
 Huge thanks to [Acidanthera team](https://github.com/acidanthera) for [OpenCore](https://github.com/acidanthera/OpenCorePkg).
-Extra credit goes to @usr-sse2 for [help with battery](https://github.com/acidanthera/bugtracker/issues/892).
-Also specialy thanks to @RehabMan because it's based on [his work](https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/tree/i2c).
+Extra credit goes to [@usr-sse2](https://github.com/usr-sse2) for [help with battery](https://github.com/acidanthera/bugtracker/issues/892).
+Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's based on [his work](https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/tree/i2c).
 
 ### Currently not working + solutions
 
@@ -17,6 +17,7 @@ Also specialy thanks to @RehabMan because it's based on [his work](https://githu
 - Hibernation (I think it can be done somehow, but I don't need it and I use FileVault2 full disk encryption).
 - DRM (Apple TV+, Netflix in Safari), but there is workaround use different browser ([Vivaldi](https://vivaldi.com) for me). There is also web version of [Apple TV+](https://tv.apple.com) that works from browser.
 - Dual display port output on HP Ultraslim dock 2013 and other docking stations. Both DP works as one because macOS [doesn't support DisplayPort MST (Multi Stream or daisy-chaining)](https://medium.com/@sebvance/everything-you-need-to-know-about-macbook-pros-and-their-lack-of-displayport-mst-multi-stream-98ce33d64af4). It's not issue with Hackintosh but macOS itself.
+  If you want output to more than 1 external display, you need simple USB-C -> HDMI/DP adapter or [TB3 -> Dual Display Port dongle with DisplayLink 6950](https://i-tec.cz/en/produkt/tb3dual4kdp-2/).
 
 ## BIOS settings
 

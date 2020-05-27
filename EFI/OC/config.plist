@@ -977,18 +977,7 @@
 		</dict>
 	</dict>
 	<key>DeviceProperties</key>
-	<dict>
-		<key>Add</key>
-		<dict>
-			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
-			<dict>
-				<key>device-id</key>
-				<data>wIcAAA==</data>
-				<key>AAPL,ig-platform-id</key>
-				<data>AADAhw==</data>
-			</dict>
-		</dict>
-	</dict>
+	<dict/>
 	<key>Kernel</key>
 	<dict>
 		<key>Add</key>
@@ -1372,34 +1361,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>BootKicker.efi</string>
-				<key>Name</key>
-				<string>BootKicker.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-				<key>Path</key>
-				<string>BootKicker.efi</string>
-				<key>Auxiliary</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>ChipTune.efi</string>
-				<key>Name</key>
-				<string>ChipTune.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-				<key>Path</key>
-				<string>ChipTune.efi</string>
-				<key>Auxiliary</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>CleanNvram.efi</string>
 				<key>Name</key>
 				<string>CleanNvram.efi</string>
@@ -1414,76 +1375,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>GopStop.efi</string>
-				<key>Name</key>
-				<string>GopStop.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-				<key>Path</key>
-				<string>GopStop.efi</string>
-				<key>Auxiliary</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HdaCodecDump.efi</string>
-				<key>Name</key>
-				<string>HdaCodecDump.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-				<key>Path</key>
-				<string>HdaCodecDump.efi</string>
-				<key>Auxiliary</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>KeyTester.efi</string>
-				<key>Name</key>
-				<string>KeyTester.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-				<key>Path</key>
-				<string>KeyTester.efi</string>
-				<key>Auxiliary</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>MmapDump.efi</string>
-				<key>Name</key>
-				<string>MmapDump.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-				<key>Path</key>
-				<string>MmapDump.efi</string>
-				<key>Auxiliary</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>OpenControl.efi</string>
-				<key>Name</key>
-				<string>OpenControl.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-				<key>Path</key>
-				<string>OpenControl.efi</string>
-				<key>Auxiliary</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>OpenShell.efi</string>
 				<key>Name</key>
 				<string>OpenShell.efi</string>
@@ -1493,20 +1384,6 @@
 				<string></string>
 				<key>Path</key>
 				<string>OpenShell.efi</string>
-				<key>Auxiliary</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>VerifyMsrE2.efi</string>
-				<key>Name</key>
-				<string>VerifyMsrE2.efi</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Arguments</key>
-				<string></string>
-				<key>Path</key>
-				<string>VerifyMsrE2.efi</string>
 				<key>Auxiliary</key>
 				<false/>
 			</dict>

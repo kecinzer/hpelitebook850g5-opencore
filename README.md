@@ -1,5 +1,5 @@
 # HP EliteBook 850 G5 Hackintosh
-Latest Opencore for HP EliteBook 850 G5. I'm using always latest BIOS and versions of OC (0.5.8) and macOS (10.15.5).
+Opencore Hackintosh for HP EliteBook 850 G5. I'm using always latest BIOS version, OpenCore, additional kexts and macOS.
 For my specific laptop configuration almost everything works except SmartCard reader, that I even don't use.
 I'm still working on improvement and clean ups.
 

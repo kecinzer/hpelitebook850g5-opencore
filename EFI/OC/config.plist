@@ -1033,40 +1033,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>change Method(RDSS,1,S) to XDSS</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				UkRTUwk=
-				</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>OemTableId</key>
-				<data>
-				</data>
-				<key>Replace</key>
-				<data>
-				WERTUwk=
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data>
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>change EC Method(_REG,2,N) to XREG, 4x40s, 4x30s</string>
 				<key>Count</key>
 				<integer>0</integer>

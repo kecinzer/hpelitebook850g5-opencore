@@ -1,29 +1,10 @@
 DefinitionBlock("", "SSDT", 2, "hack", "HACK", 0)
 {
-    External(_SB.PCI0.RP05.PXSX, DeviceObj)
-    External(_SB.PCI0.RP05.PXSX.XDSS, MethodObj)
-    External(_SB.PCI0.LPCB.EC.ECRG, IntObj)
-
-    Scope(_SB.PCI0.RP05.PXSX)
-    {
-        // original RDSS is renamed to XDSS
-        // the original RDSS does not check for EC "ready" state
-        Method(RDSS, 1)
-        {
-            // check if EC is ready and XDSS exists
-            If (\_SB.PCI0.LPCB.EC.ECRG && CondRefOf(^XDSS))
-            {
-                // call original RDSS (now renamed XDSS)
-                XDSS(Arg0)
-            }
-        }
-    }
-
     External(\_SB.PCI0, DeviceObj)
 
-//
-// Simulate Windows for _OSI calls
-//
+    //
+    // Simulate Windows for _OSI calls
+    //
     // All _OSI calls in DSDT are routed to XOSI...
     // XOSI simulates "Windows 2009" (which is Windows 7)
     // Note: According to ACPI spec, _OSI("Windows") must also return true
@@ -49,9 +30,9 @@ DefinitionBlock("", "SSDT", 2, "hack", "HACK", 0)
         Return (Ones != Match(Local0, MEQ, Arg0, MTR, 0, 0))
     }
 
-//
-// DGPU disable (and related shutdown fix)
-//
+    //
+    // DGPU disable (and related shutdown fix)
+    //
     // In DSDT, native _PTS and _WAK are renamed ZPTS/ZWAK
     // As a result, calls to these methods land here.
     Method(_PTS, 1)
@@ -88,10 +69,10 @@ DefinitionBlock("", "SSDT", 2, "hack", "HACK", 0)
         }
     }
 
-//
-// Add SMBUS device
-// From SSDT-SMBUS.dsl
-//
+    //
+    // Add SMBUS device
+    // From SSDT-SMBUS.dsl
+    //
     External (_SB_.PCI0.SBUS.BUS0, DeviceObj)
     Device(_SB.PCI0.SBUS.BUS0)
     {
@@ -109,10 +90,10 @@ DefinitionBlock("", "SSDT", 2, "hack", "HACK", 0)
         }
     }
 
-//
-// Unsupported LPC devices
-// From SSDT-LPC.dsl
-//
+    //
+    // Unsupported LPC devices
+    // From SSDT-LPC.dsl
+    //
     External(_SB.PCI0.LPCB, DeviceObj)
     Scope(_SB.PCI0.LPCB)
     {
@@ -149,10 +130,10 @@ DefinitionBlock("", "SSDT", 2, "hack", "HACK", 0)
         }
     }
 
-//
-// Deal with "instant wake" via _PRW override
-// From SSDT-PRW.dsl, SSDT-LANC_PRW.dsl
-//
+    //
+    // Deal with "instant wake" via _PRW override
+    // From SSDT-PRW.dsl, SSDT-LANC_PRW.dsl
+    //
 
     // In DSDT, native GPRW is renamed to XPRW with Clover binpatch.
     // (or UPRW to XPRW)

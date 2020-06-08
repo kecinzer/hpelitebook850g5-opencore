@@ -1,102 +1,50 @@
-// IGPU injections for Intel graphics
+// Adding PNLF device for WhateverGreen.kext and others.
+// This is a modified PNLF version originally taken from RehabMan/OS-X-Clover-Laptop-Config repository:
+// https://raw.githubusercontent.com/RehabMan/OS-X-Clover-Laptop-Config/master/hotpatch/SSDT-PNLF.dsl
+// Rename GFX0 to anything else if your IGPU name is different.
+//
+// Licensed under GNU General Public License v2.0
+// https://github.com/RehabMan/OS-X-Clover-Laptop-Config/blob/master/License.md
 
-DefinitionBlock("", "SSDT", 2, "hack", "_IGPU", 0)
+#define FBTYPE_SANDYIVY 1
+#define FBTYPE_HSWPLUS 2
+#define FBTYPE_CFL 3
+
+#define SANDYIVY_PWMMAX 0x710
+#define HASWELL_PWMMAX 0xad9
+#define SKYLAKE_PWMMAX 0x56c
+#define CUSTOM_PWMMAX_07a1 0x07a1
+#define CUSTOM_PWMMAX_1499 0x1499
+#define COFFEELAKE_PWMMAX 0xffff
+
+DefinitionBlock("", "SSDT", 2, "ACDT", "PNLF", 0)
 {
-//
-// IGPU injection
-// From SSDT-IGPU.dsl
-//
-    External(_SB.PCI0.IGPU, DeviceObj)
-    External(RMCF.IGPI, IntObj)
-    Scope(_SB.PCI0.IGPU)
-    {
-        // need the device-id from PCI_config to inject correct properties
-        OperationRegion(IGD4, PCI_Config, 0, 0x14)
-        Field(IGD4, AnyAcc, NoLock, Preserve)
-        {
-            Offset(0x02), GDID,16,
-            Offset(0x10), BAR1,32,
-        }
-        Name(GIDL, Package()
-        {
-            // Kaby Lake-R/UHD620
-            0x5917, 0, Package()
-            {
-                //SKL spoof: "AAPL,ig-platform-id", Buffer() { 0x00, 0x00, 0x1b, 0x19 },
-                "AAPL,ig-platform-id", Buffer() { 0x00, 0x00, 0x16, 0x59 },
-                "model", Buffer() { "Intel UHD Graphics 620" },
-                "hda-gfx", Buffer() { "onboard-1" },
-                //SKL spoof: "device-id", Buffer() { 0x1b, 0x19, 0x00, 0x00 },
-                "device-id", Buffer() { 0x16, 0x59, 0x00, 0x00 },
-                //SKL spoof: "AAPL,GfxYTile", Buffer() { 1, 0, 0, 0 },
-            },
-        })
-
-        // inject properties for integrated graphics on IGPU
-        Method(_DSM, 4)
-        {
-            // IGPI can be set to Ones to disable IGPU property injection (same as removing SSDT-IGPU.aml)
-            If (CondRefOf(\RMCF.IGPI)) { If (Ones == \RMCF.IGPI) { Return(0) } }
-            // otherwise, normal IGPU injection...
-            If (!Arg2) { Return (Buffer() { 0x03 } ) }
-            // search for matching device-id in device-id list
-            Local0 = Match(GIDL, MEQ, GDID, MTR, 0, 0)
-            // unrecognized device... inject nothing in this case
-            If (Ones == Local0) { Return (Package() { }) }
-            // start search for zero-terminator (prefix to injection package)
-            Local0 = DerefOf(GIDL[Match(GIDL, MEQ, 0, MTR, 0, Local0+1)+1])
-            // the user can provide an override of ig-platform-id (or snb-platform-id) in RMCF.IGPI
-            If (CondRefOf(\RMCF.IGPI))
-            {
-                if (0 != \RMCF.IGPI)
-                {
-                    CreateDWordField(DerefOf(Local0[1]), 0, IGPI)
-                    IGPI = \RMCF.IGPI
-                }
-            }
-            Return (Local0)
-        }
-    }
-
-    // Adding PNLF device for IntelBacklight.kext or AppleBacklight.kext+AppleBacklightFixup.kext
-
-    #define FBTYPE_SANDYIVY 1
-    #define FBTYPE_HSWPLUS 2
-    #define FBTYPE_CFL 3
-
-    #define SANDYIVY_PWMMAX 0x710
-    #define HASWELL_PWMMAX 0xad9
-    #define SKYLAKE_PWMMAX 0x56c
-    #define CUSTOM_PWMMAX_07a1 0x07a1
-    #define CUSTOM_PWMMAX_1499 0x1499
-    #define COFFEELAKE_PWMMAX 0xffff
-
     External(RMCF.BKLT, IntObj)
     External(RMCF.LMAX, IntObj)
     External(RMCF.LEVW, IntObj)
     External(RMCF.GRAN, IntObj)
     External(RMCF.FBTP, IntObj)
 
-    External(_SB.PCI0.IGPU, DeviceObj)
-    Scope(_SB.PCI0.IGPU)
+    External(_SB.PCI0.GFX0, DeviceObj)
+    Scope(_SB.PCI0.GFX0)
     {
         OperationRegion(RMP3, PCI_Config, 0, 0x14)
     }
 
     // For backlight control
-    Device(_SB.PCI0.IGPU.PNLF)
+    Device(_SB.PCI0.GFX0.PNLF)
     {
         Name(_ADR, Zero)
-        Name(_HID, EisaId ("APP0002"))
+        Name(_HID, EisaId("APP0002"))
         Name(_CID, "backlight")
-        // _UID is set depending on PWMMax to match profiles in AppleBacklightFixup.kext Info.plist
+        // _UID is set depending on PWMMax to match profiles in WhateverGreen.kext Info.plist
         // 14: Sandy/Ivy 0x710
         // 15: Haswell/Broadwell 0xad9
         // 16: Skylake/KabyLake 0x56c (and some Haswell, example 0xa2e0008)
         // 17: custom LMAX=0x7a1
         // 18: custom LMAX=0x1499
         // 19: CoffeeLake 0xffff
-        // 99: Other (requires custom AppleBacklightInjector.kext/AppleBackightFixup.kext)
+        // 99: Other (requires custom AppleBacklightInjector.kext/WhateverGreen.kext)
         Name(_UID, 0)
         Name(_STA, 0x0B)
 
@@ -203,7 +151,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "_IGPU", 0)
                 // change/scale only if different than current...
                 Local1 = ^LEVX >> 16
                 If (!Local1) { Local1 = Local2 }
-                If (Local2 != Local1)
+                If (!(8 & Local4) && Local2 != Local1)
                 {
                     // set new backlight PWMMax but retain current backlight level by scaling
                     Local0 = (^LEVL * Local2) / Local1
@@ -236,7 +184,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "_IGPU", 0)
                 // change/scale only if different than current...
                 Local1 = ^LEVX
                 If (!Local1) { Local1 = Local2 }
-                If (Local2 != Local1)
+                If (!(8 & Local4) && Local2 != Local1)
                 {
                     // set new backlight PWMMax but retain current backlight level by scaling
                     Local0 = (^LEVD * Local2) / Local1
@@ -284,7 +232,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "_IGPU", 0)
                 // change/scale only if different than current...
                 Local1 = ^LEVX >> 16
                 If (!Local1) { Local1 = Local2 }
-                If (Local2 != Local1)
+                If (!(8 & Local4) && Local2 != Local1)
                 {
                     // set new backlight PWMAX but retain current backlight level by scaling
                     Local0 = (((^LEVX & 0xFFFF) * Local2) / Local1) | (Local2 << 16)

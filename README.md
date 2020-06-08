@@ -3,9 +3,13 @@ Opencore Hackintosh for HP EliteBook 850 G5. I'm using always latest BIOS versio
 For my specific laptop configuration almost everything works except SmartCard reader, that I even don't use.
 I'm still working on improvement and clean ups.
 
+## Massive overhaul
+Hack is now based almost on pure OpenCore patches and hack. I followed [this guide](https://github.com/dortania/OpenCore-Desktop-Guide/blob/master/clover-conversion/Clover-config.md) and [this guide](https://dortania.github.io/Getting-Started-With-ACPI/). Thank to [@Joaotcs](https://github.com/Joaotcs) that pushed me to do it. There left only few thing from RehabMan repo.
+There are still some things that could be rewriten and I will do it when I figure out hot to do it.
+
 Huge thanks to [Acidanthera team](https://github.com/acidanthera) for [OpenCore](https://github.com/acidanthera/OpenCorePkg).
 Extra credit goes to [@usr-sse2](https://github.com/usr-sse2) for [help with battery](https://github.com/acidanthera/bugtracker/issues/892).
-Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's based on [his work](https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/tree/i2c).
+Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's was based on [his work](https://github.com/RehabMan/HP-ProBook-4x30s-DSDT-Patch/tree/i2c).
 
 ### My configuration
 

@@ -6,10 +6,6 @@ DefinitionBlock("", "SSDT", 2, "hack", "INPUT", 0)
         // overrides for VoodooPS2 configuration...
         Name(RMCF, Package()
         {
-        "Synaptics TouchPad", Package()
-        {
-            "DisableDevice", ">y",
-        },
         // for including into RMCF at PCI0.LPCB.PS2K.RMCF
         // this data from ProBook 640 G2 Skylake 86-key keyboard
         "Keyboard", Package()
@@ -69,6 +65,12 @@ DefinitionBlock("", "SSDT", 2, "hack", "INPUT", 0)
                 "e001=44",  //Fn+F10
                             //Fn+F11=F11
                             //Fn+F12=F12
+            },
+            "Custom ADB Map", Package()
+            {
+                Package(){},
+                "e001=34",    // F8 (microphone) to Play/Pause
+                "e01d=3d",    // Right Control to Right Alt
             },
         },
         })

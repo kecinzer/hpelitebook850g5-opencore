@@ -2,7 +2,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
 {
     External(\_SB.PCI0, DeviceObj)
     External(\_SB.PCI0.LPCB, DeviceObj)
-    External(\_SB.PCI0.LPCB.EC, DeviceObj)
+    External(\_SB.PCI0.LPCB.EC0, DeviceObj)
     External(\_SB.BAT0, DeviceObj)
     External(\_SB.BAT1, DeviceObj)
 
@@ -10,30 +10,30 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
     {
         Method (BTIX, 1, Serialized)
         {
-            Local0 = ^PCI0.LPCB.EC.BTIX (Arg0)
+            Local0 = ^PCI0.LPCB.EC0.BTIX (Arg0)
             If ((Local0 == 0xFF))
             {
                 Return (Package (0x15)
                 {
                     One,
-                    Zero, 
-                    0xFFFFFFFF, 
-                    0xFFFFFFFF, 
-                    One, 
-                    0xFFFFFFFF, 
-                    Zero, 
-                    Zero, 
+                    Zero,
+                    0xFFFFFFFF,
+                    0xFFFFFFFF,
+                    One,
+                    0xFFFFFFFF,
+                    Zero,
+                    Zero,
                     0xFFFFFFFF,
                     100000,
                     0xFFFFFFFF,
                     0xFFFFFFFF,
                     0xFFFFFFFF,
                     0xFFFFFFFF,
-                    Zero, 
-                    Zero, 
-                    "", 
-                    "", 
-                    "", 
+                    Zero,
+                    Zero,
+                    "",
+                    "",
+                    "",
                     Zero,
                     One
                 })
@@ -52,16 +52,16 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
             Return (BTIX (Zero))
         }
     }
-    
+
     Scope(\_SB.BAT1)
     {
         Method (_BIX, 0, NotSerialized)  // _BIX: Battery Information Extended
         {
             Return (BTIX (One))
-        }        
+        }
     }
 
-    Scope(\_SB.PCI0.LPCB.EC)
+    Scope(\_SB.PCI0.LPCB.EC0)
     {
         // This is an override for battery methods that access EC fields
         // larger than 8-bit.
@@ -133,39 +133,39 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
             ACP0,8,ACP1,8,//ACPR,   16,
         }
 
-        External(\_SB.PCI0.LPCB.EC.BTDR, MethodObj)
-        External(\_SB.PCI0.LPCB.EC.BSTA, MethodObj)
-        External(\_SB.PCI0.LPCB.EC.BTMX, MutexObj)
-        External(\_SB.PCI0.LPCB.EC.NGBF, IntObj)
-        External(\_SB.PCI0.LPCB.EC.NGBT, IntObj)
+        External(\_SB.PCI0.LPCB.EC0.BTDR, MethodObj)
+        External(\_SB.PCI0.LPCB.EC0.BSTA, MethodObj)
+        External(\_SB.PCI0.LPCB.EC0.BTMX, MutexObj)
+        External(\_SB.PCI0.LPCB.EC0.NGBF, IntObj)
+        External(\_SB.PCI0.LPCB.EC0.NGBT, IntObj)
         External(\_SB.NBST, PkgObj)
         External(\_SB.NDBS, PkgObj)
-        External(\_SB.PCI0.LPCB.EC.ECMX, MutexObj)
-        External(\_SB.PCI0.LPCB.EC.ECRG, IntObj)
-        External(\_SB.PCI0.LPCB.EC.BSEL, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.NLB1, IntObj)
-        External(\_SB.PCI0.LPCB.EC.NLB2, IntObj)
-        External(\_SB.PCI0.LPCB.EC.CRZN, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.TEMP, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.GBSS, MethodObj)
-        External(\_SB.PCI0.LPCB.EC.BST, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.GACS, MethodObj)
-        External(\_SB.PCI0.LPCB.EC.NDCB, IntObj)
-        External(\_SB.PCI0.LPCB.EC.BATP, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.INCH, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.IDIS, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.INAC, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.PSSB, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.GBMF, MethodObj)
-        External(\_SB.PCI0.LPCB.EC.GCTL, MethodObj)
-        External(\_SB.PCI0.LPCB.EC.GDNM, MethodObj)
-        External(\_SB.PCI0.LPCB.EC.GDCH, MethodObj)
-        External(\_SB.PCI0.LPCB.EC.BRCC, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.BRCV, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.BATN, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.NLO2, IntObj)
-        External(\_SB.PCI0.LPCB.EC.LB1, FieldUnitObj)
-        External(\_SB.PCI0.LPCB.EC.LB2, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.ECMX, MutexObj)
+        External(\_SB.PCI0.LPCB.EC0.ECRG, IntObj)
+        External(\_SB.PCI0.LPCB.EC0.BSEL, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.NLB1, IntObj)
+        External(\_SB.PCI0.LPCB.EC0.NLB2, IntObj)
+        External(\_SB.PCI0.LPCB.EC0.CRZN, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.TEMP, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.GBSS, MethodObj)
+        External(\_SB.PCI0.LPCB.EC0.BST, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.GACS, MethodObj)
+        External(\_SB.PCI0.LPCB.EC0.NDCB, IntObj)
+        External(\_SB.PCI0.LPCB.EC0.BATP, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.INCH, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.IDIS, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.INAC, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.PSSB, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.GBMF, MethodObj)
+        External(\_SB.PCI0.LPCB.EC0.GCTL, MethodObj)
+        External(\_SB.PCI0.LPCB.EC0.GDNM, MethodObj)
+        External(\_SB.PCI0.LPCB.EC0.GDCH, MethodObj)
+        External(\_SB.PCI0.LPCB.EC0.BRCC, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.BRCV, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.BATN, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.NLO2, IntObj)
+        External(\_SB.PCI0.LPCB.EC0.LB1, FieldUnitObj)
+        External(\_SB.PCI0.LPCB.EC0.LB2, FieldUnitObj)
 
         // Methods BTIF, BTST, ITLB, GBTI, GBTC are renamed in native DSDT
         // calls from DSDT land here in the patched methods...
@@ -208,16 +208,16 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
                 Store (Local4, Index (DerefOf (Index (NBTI, Arg0)), 0x06))
                 Store (B1B2 (BSN0, BSN1), Local0)
                 Store (B1B2 (BDA0, BDA1), Local1)
-                
+
                 // This shouldn't be here!
                 // battery cycle count
                 Store (B1B2 (BCC0, BCC1), Index (DerefOf (Index (NBTI, Arg0)), 0x0D))
                 // battery temperature
                 // battery temperature
-                Acquire (\_SB.PCI0.LPCB.EC.ECMX, 0xFFFF)
-                Store (5, \_SB.PCI0.LPCB.EC.CRZN)
-                Store (\_SB.PCI0.LPCB.EC.TEMP, Local2)
-                Release (\_SB.PCI0.LPCB.EC.ECMX)
+                Acquire (\_SB.PCI0.LPCB.EC0.ECMX, 0xFFFF)
+                Store (5, \_SB.PCI0.LPCB.EC0.CRZN)
+                Store (\_SB.PCI0.LPCB.EC0.TEMP, Local2)
+                Release (\_SB.PCI0.LPCB.EC0.ECMX)
                 Add (Multiply (Local2, 10), 2732, Local2) // Celsius to .1K
                 Store (Local2, Index (DerefOf (Index (NBTI, Arg0)), 0x0E))
             }
@@ -230,7 +230,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
             Release (BTMX)
             Return (Zero)
         }
-        
+
         Method (BTIX, 1, Serialized)
         {
             ShiftLeft (One, Arg0, Local7)
@@ -867,7 +867,7 @@ DefinitionBlock("", "SSDT", 2, "hack", "BATT", 0)
                 "Hewlett-Packard",
             }
         })
-        
+
         Name (NBIX, Package(0x02)
         {
             Package(0x15)

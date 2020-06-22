@@ -577,7 +577,7 @@ DefinitionBlock ("", "SSDT", 1, "hack", "TB", 0x00000000)
                         Name (_ADR, Zero)  // _ADR: Address
                         Device (SSP1)
                         {
-                            Name (_ADR, One)  // _ADR: Address
+                            Name (_ADR, 0x03)  // _ADR: Address
                             Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
                             {
                                 0xFF, 
@@ -635,113 +635,9 @@ DefinitionBlock ("", "SSDT", 1, "hack", "TB", 0x00000000)
                             }
                         }
 
-                        Device (SSP2)
+                        Device (HS05)
                         {
-                            Name (_ADR, 0x02)  // _ADR: Address
-                            Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
-                            {
-                                0xFF, 
-                                0x09, 
-                                Zero, 
-                                Zero
-                            })
-                            Name (_PLD, Package (0x01)  // _PLD: Physical Location of Device
-                            {
-                                ToPLD (
-                                    PLD_Revision           = 0x1,
-                                    PLD_IgnoreColor        = 0x1,
-                                    PLD_Red                = 0x0,
-                                    PLD_Green              = 0x0,
-                                    PLD_Blue               = 0x0,
-                                    PLD_Width              = 0x0,
-                                    PLD_Height             = 0x0,
-                                    PLD_UserVisible        = 0x1,
-                                    PLD_Dock               = 0x0,
-                                    PLD_Lid                = 0x0,
-                                    PLD_Panel              = "UNKNOWN",
-                                    PLD_VerticalPosition   = "UPPER",
-                                    PLD_HorizontalPosition = "LEFT",
-                                    PLD_Shape              = "UNKNOWN",
-                                    PLD_GroupOrientation   = 0x0,
-                                    PLD_GroupToken         = 0x0,
-                                    PLD_GroupPosition      = 0x0,
-                                    PLD_Bay                = 0x0,
-                                    PLD_Ejectable          = 0x0,
-                                    PLD_EjectRequired      = 0x0,
-                                    PLD_CabinetNumber      = 0x0,
-                                    PLD_CardCageNumber     = 0x0,
-                                    PLD_Reference          = 0x0,
-                                    PLD_Rotation           = 0x0,
-                                    PLD_Order              = 0x0,
-                                    PLD_VerticalOffset     = 0x0,
-                                    PLD_HorizontalOffset   = 0x0)
-
-                            })
-                            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                            {
-                                If ((Arg2 == Zero))
-                                {
-                                    Return (Buffer (One)
-                                    {
-                                         0x04                                             // .
-                                    })
-                                }
-
-                                Return (Package (0x02)
-                                {
-                                    "UsbCPortNumber", 
-                                    0x02
-                                })
-                            }
-                        }
-
-                        Device (HS01)
-                        {
-                            Name (_ADR, One)  // _ADR: Address
-                            Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
-                            {
-                                0xFF, 
-                                0x09, 
-                                Zero, 
-                                Zero
-                            })
-                            Name (_PLD, Package (0x01)  // _PLD: Physical Location of Device
-                            {
-                                ToPLD (
-                                    PLD_Revision           = 0x1,
-                                    PLD_IgnoreColor        = 0x1,
-                                    PLD_Red                = 0x0,
-                                    PLD_Green              = 0x0,
-                                    PLD_Blue               = 0x0,
-                                    PLD_Width              = 0x0,
-                                    PLD_Height             = 0x0,
-                                    PLD_UserVisible        = 0x1,
-                                    PLD_Dock               = 0x0,
-                                    PLD_Lid                = 0x0,
-                                    PLD_Panel              = "UNKNOWN",
-                                    PLD_VerticalPosition   = "UPPER",
-                                    PLD_HorizontalPosition = "LEFT",
-                                    PLD_Shape              = "UNKNOWN",
-                                    PLD_GroupOrientation   = 0x0,
-                                    PLD_GroupToken         = 0x0,
-                                    PLD_GroupPosition      = 0x0,
-                                    PLD_Bay                = 0x0,
-                                    PLD_Ejectable          = 0x0,
-                                    PLD_EjectRequired      = 0x0,
-                                    PLD_CabinetNumber      = 0x0,
-                                    PLD_CardCageNumber     = 0x0,
-                                    PLD_Reference          = 0x0,
-                                    PLD_Rotation           = 0x0,
-                                    PLD_Order              = 0x0,
-                                    PLD_VerticalOffset     = 0x0,
-                                    PLD_HorizontalOffset   = 0x0)
-
-                            })
-                        }
-
-                        Device (HS02)
-                        {
-                            Name (_ADR, 0x02)  // _ADR: Address
+                            Name (_ADR, 0x05)  // _ADR: Address
                             Name (_UPC, Package (0x04)  // _UPC: USB Port Capabilities
                             {
                                 0xFF, 

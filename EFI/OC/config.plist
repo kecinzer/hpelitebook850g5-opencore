@@ -40,14 +40,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SBus</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-SBUS-MCHC.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Input</string>
 				<key>Enabled</key>
 				<true/>
@@ -56,7 +48,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery</string>
+				<string>SSDT-BATT.aml</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -69,14 +61,6 @@
 				<true/>
 				<key>Path</key>
 				<string>SSDT-ALS0.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>USB Shutdown fix</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-SDFIX-USB.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -133,7 +117,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Change _OSI to XOSI</string>
+				<string>SSDT-XOSI.aml - change _OSI to XOSI</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -167,41 +151,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Shutdown fix - change _PTS to ZPTS</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				X1BUUwE=
-				</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>OemTableId</key>
-				<data>
-				</data>
-				<key>Replace</key>
-				<data>
-				WlBUUwE=
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data>
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Battery - change Method(BTIF,1,Serialized) to BTI0</string>
+				<string>SSDT-BATT.aml - change Method(BTIF,1,Serialized) to BTI0</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -235,7 +185,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(BTIF,1,Serialized) to BTI0 (G3)</string>
+				<string>SSDT-BATT.aml - change Method(BTIF,1,Serialized) to BTI0 (G3)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -269,7 +219,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(BTST,2,Serialized) to BTS1</string>
+				<string>SSDT-BATT.aml - change Method(BTST,2,Serialized) to BTS1</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -303,7 +253,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(BTST,2,Serialized) to BTS1 (G3)</string>
+				<string>SSDT-BATT.aml - change Method(BTST,2,Serialized) to BTS1 (G3)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -337,7 +287,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(SBTC,3,NotSerialized) to SBT2</string>
+				<string>SSDT-BATT.aml - change Method(SBTC,3,NotSerialized) to SBT2</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -371,7 +321,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(GBTI,1,NotSerialized) to GBT3</string>
+				<string>SSDT-BATT.aml - change Method(GBTI,1,NotSerialized) to GBT3</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -405,7 +355,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(GBTC,0,NotSerialized) to GBT4</string>
+				<string>SSDT-BATT.aml - change Method(GBTC,0,NotSerialized) to GBT4</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -439,7 +389,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(ITLB,0,NotSerialized) to ITL1 (for G4)</string>
+				<string>SSDT-BATT.aml - change Method(ITLB,0,NotSerialized) to ITL1 (for G4)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -473,7 +423,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(GACW,0,NotSerialized) to XACW (for G4 latest BIOS)</string>
+				<string>SSDT-BATT.aml - change Method(GACW,0,NotSerialized) to XACW (for G4 latest BIOS)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -507,7 +457,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Method(GBAW,0,NotSerialized) to XBAW (for G4 latest BIOS)</string>
+				<string>SSDT-BATT.aml - change Method(GBAW,0,NotSerialized) to XBAW (for G4 latest BIOS)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -541,7 +491,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Battery - change Name(NBTI,..) to NBT5</string>
+				<string>SSDT-BATT.aml - change Name(NBTI,..) to NBT5</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -774,13 +724,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>SMCBatteryManager.kext</string>
+				<string>SMCSSDT-BATT.amlManager.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCBatteryManager</string>
+				<string>Contents/MacOS/SMCSSDT-BATT.amlManager</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -925,22 +875,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/VoodooPS2Keyboard</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
-				<string>NoTouchID.kext</string>
-				<key>Comment</key>
-				<string></string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/NoTouchID</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>

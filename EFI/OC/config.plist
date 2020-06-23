@@ -724,13 +724,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>SMCSSDT-BATT.amlManager.kext</string>
+				<string>SMCBatteryManager.kext</string>
 				<key>Comment</key>
 				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCSSDT-BATT.amlManager</string>
+				<string>Contents/MacOS/SMCBatteryManager</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -1009,7 +1009,7 @@
 			<key>AuthRestart</key>
 			<false/>
 			<key>ExposeSensitiveData</key>
-			<integer>2</integer>
+			<integer>3</integer>
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>ScanPolicy</key>

@@ -30,6 +30,7 @@ Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's wa
   - For out of the box support you need [Airport](https://dortania.github.io/Wireless-Buyers-Guide/Airport.html) BCM94360CS2 with M.2 adapter (cca. 20 USD) that I had, but it fits to laptop case very hard. And I had waves on my keyboard :).
     <img src="pictures/airport.jpg" width="400">
   - Better, but more expensive (cca. 50 USD) solution is [Fenvi BCM94360NG M.2 card](https://www.aliexpress.com/item/32464748097.html?spm=a2g0s.9042311.0.0.6a744c4d7jS1RQ) that is based on Airport card and fits into laptop perfectly. The best thing - you also don't need any kexts for Wifi nor bluetooth and works out of the box.
+    <img src="pictures/Fenvi.png" width="400">
   - For cheaper (12 - 15 USD) solution you can use DW1820A. There is new [ASPM fix](https://osxlatitude.com/forums/topic/11322-broadcom-bcm4350-cards-under-high-sierramojavecatalina/), that solves freezing issues.
     <img src="pictures/dw1820a.jpg" width="400">
 - Trackpoint with buttons (that point in center of G, H, B keys), but we have great touchpad with all gertures.

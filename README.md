@@ -40,6 +40,8 @@ Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's wa
 
 ## BIOS settings
 
+FIRST RESET TO FACTORY DEFAULT SETTINGS (avoids known wake after sleep problems).
+
 This is my BIOS settings. I'm currently on latest BIOS 01.11.01 Rev.A. With it works even USB-C/Thunderbolt port with hotplug.
 You can set Video memory size to 64MB minimum.
 

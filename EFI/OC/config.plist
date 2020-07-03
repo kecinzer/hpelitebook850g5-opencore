@@ -36,7 +36,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-OSYS.aml</string>
+				<string>SSDT-XOSI.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -117,14 +117,14 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Change content of _INI method in CPD0 device</string>
+				<string>SSDT-XOSI.aml - change _OSI to XOSI</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
 				<data>
-				oBKVT1NZUwvcB1NSWE9HUERJAXBHTlVNR1BESUlOVDFwSU5VTUdQRElJTlQyoBCTU0RNMQBTSFBPR1BESQE=
+				X09TSQ==
 				</data>
 				<key>Limit</key>
 				<integer>0</integer>
@@ -136,7 +136,7 @@
 				</data>
 				<key>Replace</key>
 				<data>
-				o6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo3BHTlVNR1BESUlOVDFwSU5VTUdQRElJTlQyU0hQT0dQREkBo6Ojo6Ojo6M=
+				WE9TSQ==
 				</data>
 				<key>ReplaceMask</key>
 				<data>

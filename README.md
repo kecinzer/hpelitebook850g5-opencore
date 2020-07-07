@@ -23,6 +23,15 @@ Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's wa
 - Fenvi BCM94360NG M.2 card
 - [i-tec Thunderbolt 3 Dual DP Video Adapter](https://i-tec.cz/en/produkt/tb3dual4kdp-2/) (laptod display + two external HP E233 displays)
 
+## BIOS settings
+
+Currently I'm using BIOS 01.11.01 Rev.A.
+Start with BIOS reset to defaults and then disable all kind of security and TPM. Video Memory size set to 64 MB. It’s useless to set more. Disable LAN/WLAN auto switching.
+System works well with Fastboot enabled, but for debugging and playing with your setup is better to disable Fast Boot.
+It's also recommended to disable Intel TXT technology and then disable Virtualization Technology for Directed I/O (VTd). OpenCore config disables this instead.
+Disable all devices that you don’t use (for example I don’t use Smart Card). Thunderbotl PCIe Hot plug Mode set to Native + Power saving.
+Other options you can set by your choice (for example FN keyboard mapping etc.).
+
 ### Currently not working + solutions
 
 - Bundled Intel Wifi card (8265NGW)
@@ -37,19 +46,3 @@ Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's wa
 - DRM (Apple TV+, Netflix in Safari), but there is workaround use different browser ([Vivaldi](https://vivaldi.com) for me). There is also web version of [Apple TV+](https://tv.apple.com) that works from browser.
 - Dual display port output on HP Ultraslim dock 2013 and other docking stations. Both DP works as one because macOS [doesn't support DisplayPort MST (Multi Stream or daisy-chaining)](https://medium.com/@sebvance/everything-you-need-to-know-about-macbook-pros-and-their-lack-of-displayport-mst-multi-stream-98ce33d64af4). It's not issue with Hackintosh but macOS itself.
   If you want output to more than 1 external display, you need simple USB-C -> HDMI/DP adapter or [TB3 -> Dual Display Port dongle with DisplayLink 6950](https://i-tec.cz/en/produkt/tb3dual4kdp-2/).
-
-## BIOS settings
-
-This is my BIOS settings. I'm currently on latest BIOS 01.11.01 Rev.A. With it works even USB-C/Thunderbolt port with hotplug.
-You can set Video memory size to 64MB minimum.
-
-![](pictures/bios_01.jpeg)
-![](pictures/bios_02.jpeg)
-![](pictures/bios_03.jpeg)
-![](pictures/bios_04.jpeg)
-![](pictures/bios_05.jpeg)
-![](pictures/bios_06.jpeg)
-![](pictures/bios_07.jpeg)
-![](pictures/bios_08.jpeg)
-![](pictures/bios_09.jpeg)
-![](pictures/bios_10.jpeg)

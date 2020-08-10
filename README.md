@@ -32,6 +32,10 @@ It's also recommended to disable Intel TXT technology and then disable Virtualiz
 Disable all devices that you don’t use (for example I don’t use Smart Card). Thunderbotl PCIe Hot plug Mode set to Native + Power saving.
 Other options you can set by your choice (for example FN keyboard mapping etc.).
 
+Make sure, that you leave option "Intel Management Enginge (ME)" enabled in "Advanced - Remote Management Options".
+<img src="pictures/imei.jpg" width="600">
+Disabling this option will cause applications hangs and freezes after waking from sleep. It's called IMEI in hackintosh and WhateverGreen take care about HECI to IMEI rename.
+
 ### Currently not working + solutions
 
 - Bundled Intel Wifi card (8265NGW)

@@ -1072,6 +1072,13 @@
 				<data></data>
 			</dict>
 		</dict>
+		<key>Delete</key>
+		<dict>
+			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
+			<array>
+				<string>rtc-blacklist</string>
+			</array>
+		</dict>
 		<key>LegacyEnable</key>
 		<false/>
 		<key>LegacySchema</key>

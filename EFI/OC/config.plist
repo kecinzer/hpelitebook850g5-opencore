@@ -1329,12 +1329,9 @@
 				<key>boot-args</key>
 				<string>debug=0x100</string>
 				<key>csr-active-config</key>
-				<data>
-				AAAAAA==
-				</data>
+				<data>AAAAAA==</data>
 				<key>prev-lang:kbd</key>
-				<data>
-				</data>
+				<data></data>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -1355,142 +1352,20 @@
 	<dict>
 		<key>Automatic</key>
 		<true/>
-		<key>DataHub</key>
-		<dict>
-			<key>ARTFrequency</key>
-			<integer>0</integer>
-			<key>BoardProduct</key>
-			<string>Mac-53FDB3D8DB8CA971</string>
-			<key>BoardRevision</key>
-			<data>
-			</data>
-			<key>DevicePathsSupported</key>
-			<integer>0</integer>
-			<key>FSBFrequency</key>
-			<integer>0</integer>
-			<key>InitialTSC</key>
-			<integer>0</integer>
-			<key>PlatformName</key>
-			<string></string>
-			<key>SmcBranch</key>
-			<data>
-			</data>
-			<key>SmcPlatform</key>
-			<data>
-			</data>
-			<key>SmcRevision</key>
-			<data>
-			</data>
-			<key>StartupPowerEvents</key>
-			<integer>0</integer>
-			<key>SystemProductName</key>
-			<string>MacBookPro15,4</string>
-			<key>SystemSerialNumber</key>
-			<string>FVFD6AZ0L40Y</string>
-			<key>SystemUUID</key>
-			<string>AB8E9581-A87E-4AC8-B86D-B2F00360F0A2</string>
-		</dict>
 		<key>Generic</key>
 		<dict>
-			<key>AdviseWindows</key>
-			<true/>
 			<key>MLB</key>
-			<string>FVF032700QX00008C</string>
+			<string>A0A0A0A0A0A0A0A0A</string>
 			<key>ROM</key>
-			<data>
-			+LRqi2hQ
-			</data>
+			<data>aAaAaAaA</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
 			<string>MacBookPro15,4</string>
 			<key>SystemSerialNumber</key>
-			<string>FVFD6AZ0L40Y</string>
+			<string>A0A0A0A0A0A0</string>
 			<key>SystemUUID</key>
-			<string>AB8E9581-A87E-4AC8-B86D-B2F00360F0A2</string>
-		</dict>
-		<key>PlatformNVRAM</key>
-		<dict>
-			<key>BID</key>
-			<string></string>
-			<key>FirmwareFeatures</key>
-			<data>
-			APwP4Tc=
-			</data>
-			<key>FirmwareFeaturesMask</key>
-			<data>
-			AP8f/z8=
-			</data>
-			<key>MLB</key>
-			<string>FVF032700QX00008C</string>
-			<key>ROM</key>
-			<data>
-			+LRqi2hQ
-			</data>
-		</dict>
-		<key>SMBIOS</key>
-		<dict>
-			<key>BIOSReleaseDate</key>
-			<string>05/13/2020</string>
-			<key>BIOSVendor</key>
-			<string>Apple Inc.</string>
-			<key>BIOSVersion</key>
-			<string>MBP154.88Z.F000.B00.2005132135</string>
-			<key>BoardAssetTag</key>
-			<string></string>
-			<key>BoardLocationInChassis</key>
-			<string>Part Component</string>
-			<key>BoardManufacturer</key>
-			<string>Apple Inc.</string>
-			<key>BoardProduct</key>
-			<string>Mac-53FDB3D8DB8CA971</string>
-			<key>BoardSerialNumber</key>
-			<string>FVF032700QX00008C</string>
-			<key>BoardType</key>
-			<integer>10</integer>
-			<key>BoardVersion</key>
-			<string>1.0</string>
-			<key>ChassisAssetTag</key>
-			<string>MacBook-Aluminum</string>
-			<key>ChassisManufacturer</key>
-			<string>Apple Inc.</string>
-			<key>ChassisSerialNumber</key>
-			<string>FVFD6AZ0L40Y</string>
-			<key>ChassisType</key>
-			<integer>9</integer>
-			<key>ChassisVersion</key>
-			<string>Mac-53FDB3D8DB8CA971</string>
-			<key>FirmwareFeatures</key>
-			<data>
-			APwP4Tc=
-			</data>
-			<key>FirmwareFeaturesMask</key>
-			<data>
-			AP8f/z8=
-			</data>
-			<key>MemoryFormFactor</key>
-			<integer>0</integer>
-			<key>PlatformFeature</key>
-			<integer>2</integer>
-			<key>ProcessorType</key>
-			<integer>0</integer>
-			<key>SmcVersion</key>
-			<data>
-			</data>
-			<key>SystemFamily</key>
-			<string>MacBook Pro</string>
-			<key>SystemManufacturer</key>
-			<string>Apple Inc.</string>
-			<key>SystemProductName</key>
-			<string>MacBookPro15,4</string>
-			<key>SystemSKUNumber</key>
-			<string>Mac-53FDB3D8DB8CA971</string>
-			<key>SystemSerialNumber</key>
-			<string>FVFD6AZ0L40Y</string>
-			<key>SystemUUID</key>
-			<string>AB8E9581-A87E-4AC8-B86D-B2F00360F0A2</string>
-			<key>SystemVersion</key>
-			<string>1.0</string>
+			<string>A0A0A0A0-A0A0-A0A0-A0A0-A0A0A0A0A0A0</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>

@@ -27,7 +27,7 @@ Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's wa
 
 ## BIOS settings
 
-Currently I'm using BIOS 01.12.00 Rev.A. (26.08.2020).\
+Currently I'm using BIOS 01.14.01 Rev.A. (06.11.2020) and latest beta of macOS 11.0.1 Big Sur.\
 Start with BIOS reset to defaults and then disable all kind of security and TPM. Video Memory size set to 64 MB. It’s useless to set more. Disable LAN/WLAN auto switching.
 System works well with Fastboot enabled, but for debugging and playing with your setup is better to disable Fast Boot.
 It's also recommended to disable Intel TXT technology and then disable Virtualization Technology for Directed I/O (VTd). OpenCore config disables this instead.

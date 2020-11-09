@@ -83,33 +83,7 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(BTIF,1,Serialized) to BTI0</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>QlRJRgl5Cg==</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>OemTableId</key>
-				<data></data>
-				<key>Replace</key>
-				<data>QlRJMAl5Cg==</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data></data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(BTIF,1,Serialized) to BTI0 (G3)</string>
+				<string>SSDT-BATT.aml - Method(BTIF) to Method(XTIF)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -123,7 +97,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>QlRJMAl5AWg=</data>
+				<data>WFRJRgl5AWg=</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -135,13 +109,13 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(BTST,2,Serialized) to BTS1</string>
+				<string>SSDT-BATT.aml - Method(BTIX) to Method(XTIX) - latest BIOS 01.14.01 (2020-11-06)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
 				<true/>
 				<key>Find</key>
-				<data>QlRTVAp5Cg==</data>
+				<data>QlRJWAl5</data>
 				<key>Limit</key>
 				<integer>0</integer>
 				<key>Mask</key>
@@ -149,7 +123,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>QlRTMQp5Cg==</data>
+				<data>WFRJWAl5</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -161,7 +135,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(BTST,2,Serialized) to BTS1 (G3)</string>
+				<string>SSDT-BATT.aml - Method(BTST) to Method(XTST)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -175,7 +149,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>QlRTMQp5AWg=</data>
+				<data>WFRTVAp5AWg=</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -187,7 +161,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(SBTC,3,NotSerialized) to SBT2</string>
+				<string>SSDT-BATT.aml - Method(SBTC) to Method(XBTC)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -201,7 +175,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>U0JUMgNwDQ==</data>
+				<data>WEJUQwNwDQ==</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -213,7 +187,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(GBTI,1,NotSerialized) to GBT3</string>
+				<string>SSDT-BATT.aml - Method(GBTI) to Method(XBTI)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -227,7 +201,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>R0JUMwFwDQ==</data>
+				<data>WEJUSQFwDQ==</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -239,7 +213,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(GBTC,0,NotSerialized) to GBT4</string>
+				<string>SSDT-BATT.aml - Method(GBTC) to Method(YBTC)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -253,7 +227,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>R0JUNABwDQ==</data>
+				<data>WUJUQwBwDQ==</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -265,7 +239,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(ITLB,0,NotSerialized) to ITL1 (for G4)</string>
+				<string>SSDT-BATT.aml - Method(ITLB) to Method(XTLB)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -279,7 +253,7 @@
 				<key>OemTableId</key>
 				<data></data>
 				<key>Replace</key>
-				<data>SVRMMQA=</data>
+				<data>WFRMQgA=</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>
@@ -291,7 +265,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(GACW,0,NotSerialized) to XACW (for G4 latest BIOS)</string>
+				<string>SSDT-BATT.aml - Method(GACW) to Method(XACW)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -317,7 +291,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Method(GBAW,0,NotSerialized) to XBAW (for G4 latest BIOS)</string>
+				<string>SSDT-BATT.aml - Method(GBAW) to Method(XBAW)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
@@ -332,32 +306,6 @@
 				<data></data>
 				<key>Replace</key>
 				<data>WEJBVwA=</data>
-				<key>ReplaceMask</key>
-				<data></data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data></data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>SSDT-BATT.aml - change Name(NBTI,..) to NBT5</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>CE5CVEk=</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data></data>
-				<key>OemTableId</key>
-				<data></data>
-				<key>Replace</key>
-				<data>CE5CVDU=</data>
 				<key>ReplaceMask</key>
 				<data></data>
 				<key>Skip</key>

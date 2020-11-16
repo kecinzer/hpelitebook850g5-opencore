@@ -22,7 +22,7 @@
 	<string>1.0</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>MacBookPro15,4-AppleUSBXHCIAR</key>
+		<key>MacBookPro14,1-AppleUSBXHCIAR</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>
@@ -44,8 +44,10 @@
 				<dict>
 					<key>SS01</key>
 					<dict>
+						<key>Comment</key>
+						<string>SS-usbc</string>
 						<key>UsbConnector</key>
-						<integer>10</integer>
+						<integer>9</integer>
 						<key>port</key>
 						<data>
 						AwAAAA==
@@ -54,9 +56,9 @@
 				</dict>
 			</dict>
 			<key>model</key>
-			<string>MacBookPro15,4</string>
+			<string>MacBookPro14,1</string>
 		</dict>
-		<key>MacBookPro15,4-XHC</key>
+		<key>MacBookPro14,1-XHC</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>com.apple.driver.AppleUSBMergeNub</string>
@@ -78,6 +80,8 @@
 				<dict>
 					<key>HS01</key>
 					<dict>
+						<key>Comment</key>
+						<string>HS-right</string>
 						<key>UsbConnector</key>
 						<integer>3</integer>
 						<key>port</key>
@@ -87,6 +91,8 @@
 					</dict>
 					<key>HS02</key>
 					<dict>
+						<key>Comment</key>
+						<string>HS-left</string>
 						<key>UsbConnector</key>
 						<integer>3</integer>
 						<key>port</key>
@@ -96,8 +102,10 @@
 					</dict>
 					<key>HS05</key>
 					<dict>
+						<key>Comment</key>
+						<string>HS-usbc</string>
 						<key>UsbConnector</key>
-						<integer>10</integer>
+						<integer>9</integer>
 						<key>port</key>
 						<data>
 						BQAAAA==
@@ -105,6 +113,8 @@
 					</dict>
 					<key>HS06</key>
 					<dict>
+						<key>Comment</key>
+						<string>Bluetooth</string>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
@@ -114,6 +124,8 @@
 					</dict>
 					<key>HS08</key>
 					<dict>
+						<key>Comment</key>
+						<string>Camera</string>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>port</key>
@@ -123,6 +135,8 @@
 					</dict>
 					<key>SS01</key>
 					<dict>
+						<key>Comment</key>
+						<string>SS-right</string>
 						<key>UsbConnector</key>
 						<integer>3</integer>
 						<key>port</key>
@@ -132,6 +146,8 @@
 					</dict>
 					<key>SS02</key>
 					<dict>
+						<key>Comment</key>
+						<string>SS-left</string>
 						<key>UsbConnector</key>
 						<integer>3</integer>
 						<key>port</key>
@@ -142,7 +158,7 @@
 				</dict>
 			</dict>
 			<key>model</key>
-			<string>MacBookPro15,4</string>
+			<string>MacBookPro14,1</string>
 		</dict>
 	</dict>
 	<key>OSBundleRequired</key>

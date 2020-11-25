@@ -941,9 +941,13 @@
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>ScanPolicy</key>
-			<integer>0</integer>
+			<integer>19857667</integer>
 			<key>SecureBootModel</key>
-			<string>Disabled</string>
+			<string>j213</string>
+			<key>DmgLoading</key>
+			<string>Signed</string>
+			<key>ApECID</key>
+			<integer>00000000000000000000</integer>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>

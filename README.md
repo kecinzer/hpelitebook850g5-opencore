@@ -17,7 +17,10 @@ Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's wa
 1. Put whole EFI folder into you EFI partition (you can try USB drive at first).
 2. Generate your own serial numbers with [GENSMBIOS](https://github.com/corpnewt/GenSMBIOS) generator and change corresponding values (MLB, SystemSerialNumber, SystemUUID) in EFI/OC/config.plist according this [GUIDE](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial).
 3. [Generate you own ROM value](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#fixing-rom).
-4. Try to boot to existing macOS or install it.
+4. If you want stay with full security, you need to [generate ApECID value](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#apecid) and replace zeros value in EFI/OC/config.plist. If you have already installed macOS, make sure, that you followed additional step in instructions from Recovery.\
+  If you don’t need full security, just remove ApECID parameter from EFI/OC/config.plist.
+5. If you want the best security and you are advanced user, you can try enable [SecureBoot](secureboot/).
+6. Try to boot to existing macOS or install it.
 
 ### My configuration
 

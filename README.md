@@ -20,7 +20,8 @@ Also specialy thanks to [@RehabMan](https://github.com/RehabMan) because it's wa
 4. If you want stay with full security, you need to [generate ApECID value](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#apecid) and replace zeros value in EFI/OC/config.plist. If you have already installed macOS, make sure, that you followed additional step in instructions from Recovery.\
   If you don’t need full security, just remove ApECID parameter from EFI/OC/config.plist.
 5. If you want the best security and you are advanced user, you can try enable [SecureBoot](secureboot/).
-6. Try to boot to existing macOS or install it.
+6. Try to boot to existing macOS.
+7. **IMPORTANT!** If you want to install macOS, you need to change property **ScanPolicy** to **0** along with **ShowPicker** to **true** in EFI/OC/config.plist otherwise you don't see BaseSystem option in OpenCore boot menu!
 
 ### My configuration
 
